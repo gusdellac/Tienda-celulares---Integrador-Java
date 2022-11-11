@@ -1,5 +1,6 @@
 
-package celularesomega;
+package main;
+
 
 public interface SistemaOpciones {
     

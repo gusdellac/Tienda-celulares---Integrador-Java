@@ -1,5 +1,6 @@
 
-package celularesomega;
+package main;
+
 
 import java.util.Scanner;
 
@@ -14,7 +15,8 @@ public class MenuPrincipal extends Menu implements SistemaOpciones{
             + "3.APPLE     /////////////////////    4.XIAOMI\n\n"
             + "5.SALIR\n");
     }
-
+    
+    
     @Override
     public int ingresarOpcion() {
         Scanner input = new Scanner(System.in);

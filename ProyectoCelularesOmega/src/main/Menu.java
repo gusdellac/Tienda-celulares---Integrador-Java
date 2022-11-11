@@ -1,6 +1,5 @@
 
-package celularesomega;
-
+package main;
 
 public abstract class Menu {
     private String opcionesMenu;

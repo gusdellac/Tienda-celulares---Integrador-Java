@@ -1,18 +1,20 @@
 
-package celularesomega;
+package main;
+
 
 import java.util.Scanner;
 
-public class MenuMotorola extends Menu implements SistemaOpciones{
+
+public class MenuApple extends Menu implements SistemaOpciones{
     private int opcion;
     
-    public MenuMotorola() {
+    public MenuApple() {
         super("\n"
-            + "\t/////MENU MOTOROLA/////\n" +
-            "1. Motorola G20SE 128GB/4GB\n" +
-            "2. Motorola G60S 128GB/6GB\n" +
-            "3. Motorola 6200 128GB/8GB\n" +
-            "4. Motorola Edge 20 Pro 256GB/12GB\n" +
+            + "\t/////MENU APPLE/////\n" +
+            "1. iPhone XR 128GB/3GB\n" +
+            "2. iPhone 11 128GB/4GB\n" +
+            "3. iPhone 12 Pro 128GB/6GB\n" +
+            "4. iPhone 13 Pro 256GB/6GB\n" +
             "5. Salir");
     }
 

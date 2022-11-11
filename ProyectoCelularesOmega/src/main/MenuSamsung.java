@@ -1,5 +1,5 @@
 
-package celularesomega;
+package main;
 
 import java.util.Scanner;
 
@@ -24,11 +24,20 @@ public class MenuSamsung extends Menu implements SistemaOpciones {
             System.out.print("\n\tDigite una opción de menú: ");
             this.opcion = Integer.parseInt(input.nextLine());
             
-            if(this.opcion <= 0 || this.opcion > 5){
+            if(this.opcion <= 0 || this.opcion > 10){
                 System.out.print("\nOpción incorrecta, digite nuevamente.");
             }
-        }while(this.opcion <= 0 || this.opcion > 5);
+        }while(this.opcion <= 0 || this.opcion > 10);
         return this.opcion;
     }
-     
+    
+    public String mostrarProductoElegido(int opcionModelo){
+        if(Celular.buscarProducto(opcionModelo)){
+            return Celular.mostrarProducto(opcionModelo);
+        }else{
+            System.out.println("El producto seleccionado no existe.");
+            ingresarOpcion();
+        }
+        return "";
+    }
 }

@@ -1,25 +1,29 @@
 
-package celularesomega;
+package main;
 
-import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class Sistema {
+    
+    public void iniciarSistema() {
         int opcion;
         
         //Instancia Menu (objeto menuPrincipal)
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         System.out.println(menuPrincipal.getOpcionesMenu());
         
+        //pedimos opción a usuario
         opcion = menuPrincipal.ingresarOpcion();
        
+        //ver este setter
         menuPrincipal.setOpcionUsuario(opcion);
        
         switch (opcion){
             case 1: {
                 MenuSamsung menuSamsung = new MenuSamsung();
                 System.out.println(menuSamsung.getOpcionesMenu());
-                menuSamsung.ingresarOpcion();
+                int opcionModelo = menuSamsung.ingresarOpcion();
+                System.out.println(menuSamsung.mostrarProductoElegido(opcionModelo));
+                System.out.println();
                 break;
             }
             
@@ -49,8 +53,6 @@ public class Main {
             }
             
         }
-        
-
-         
+     
     }
 }

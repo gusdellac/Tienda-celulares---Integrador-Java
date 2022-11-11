@@ -1,19 +1,20 @@
 
-package celularesomega;
+package main;
+
 
 import java.util.Scanner;
 
 
-public class MenuApple extends Menu implements SistemaOpciones{
+public class MenuXiaomi extends Menu implements SistemaOpciones{
     private int opcion;
     
-    public MenuApple() {
+    public MenuXiaomi() {
         super("\n"
-            + "\t/////MENU APPLE/////\n" +
-            "1. iPhone XR 128GB/3GB\n" +
-            "2. iPhone 11 128GB/4GB\n" +
-            "3. iPhone 12 Pro 128GB/6GB\n" +
-            "4. iPhone 13 Pro 256GB/6GB\n" +
+            + "\t/////MENU XIAOMI/////\n" +
+            "1. Xiaomi Note 10 128GB / 4GB\n" +
+            "2. Xiaomi Poco X3 128GB / 6GB\n" +
+            "3. Xiaomi Poco X3 Pro 256GB / 8GB\n" +
+            "4. Xiaomi Poco X3 GT 256GB / 8GB\n" +
             "5. Salir");
     }
 
@@ -30,5 +31,4 @@ public class MenuApple extends Menu implements SistemaOpciones{
         }while(this.opcion <= 0 || this.opcion > 5);
         return this.opcion;
     }
-    
-}
+}  
