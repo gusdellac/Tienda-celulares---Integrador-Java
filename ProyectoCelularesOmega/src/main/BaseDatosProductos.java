@@ -16,8 +16,6 @@ public class BaseDatosProductos {
     }
     
     public static void mostrarListaProductos(){
-        System.out.println("------------------------------------------"
-                + "-------------------------------------");
         for (Map.Entry<Integer, Producto> producto : productos.entrySet()){
             int clave = producto.getKey();
             String marca = producto.getValue().getMarca();
@@ -34,8 +32,7 @@ public class BaseDatosProductos {
     
     public static boolean mostrarProducto(int IDproducto){
         if (buscarProducto(IDproducto)){
-            System.out.println("------------------------------------------"
-                + "-------------------------------------");
+            InterfazUsuario.mostrarSeparacionInterfaz();
             System.out.println(productos.get(IDproducto).toString());
             return true;
         }else{
@@ -46,10 +43,25 @@ public class BaseDatosProductos {
     
     public static void mostrarCaracteristicas(int IDproducto){
         if (buscarProducto(IDproducto)){
-            System.out.println("\nCaracterísticas: \n"
+            System.out.println("\n<<<Características>>> \n"
                 +productos.get(IDproducto).getCaracteristicas());
         } else{
             System.out.println("El id ingresado no existe!!");
+        }
+    }
+    
+    public static void mostrarProductoPorMarca(String marcaElegida){
+        
+        for (Map.Entry<Integer, Producto> producto : productos.entrySet()){
+            
+            if(producto.getValue().getMarca() == marcaElegida){
+                int clave = producto.getKey();
+                String marca = producto.getValue().getMarca();
+                String modelo = producto.getValue().getModelo();
+                double precio = producto.getValue().getPrecio(); 
+                System.out.println(clave+" : "+ "Marca = "+marca+
+                    " / Modelo = "+modelo+" / Precio = $"+precio);
+            }  
         }
     }
   
