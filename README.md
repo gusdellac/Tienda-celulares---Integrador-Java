@@ -1,38 +1,41 @@
 # ProyectoCelulares
 
-// GRUPO OMEGA - OMEGA CELULARES
-package Proyecto;
+package GrupoOmega;
 
 import java.util.Scanner;
 
 public class GrupoOmega {
+    // GRUPO OMEGA - OMEGA CELULARES
 
    public static void main(String[] args) {
 
 Scanner entrada= new Scanner (System.in);
+        
+        System.out.println("<<<<< GRUPO OMEGA - OMEGA CELULARES >>>>>");
+        System.out.println(" ");
         System.out.println("Digite una opcion del menu: ");
         var numero = Integer.parseInt(entrada.nextLine());
-        var numeroTexto = "numero desconocido";
+        var opcion = "numero desconocido";
         switch (numero){
                 case 1:
-                    numeroTexto = "1. SAMSUNG";
+                    opcion = "1. SAMSUNG";
                     break;
                 case 2:
-                    numeroTexto = "2. MOTOROLA";
+                    opcion = "2. MOTOROLA";
                     break;
                 case 3:
-                    numeroTexto = "3. APPLE";
+                    opcion = "3. APPLE";
                     break;
                 case 4:
-                    numeroTexto = "4. XIOAMI";
+                    opcion = "4. XIOAMI";
                     break;
                  case 5:
-                    numeroTexto = "5. SALIR";
+                    opcion = "5. SALIR";
                     break;
                 default:
-                    numeroTexto= "Digite otra ocion de menu";  
+                    opcion= "Digite otra ocion de menu";  
         }            
-        System.out.println("numeroTexto = " + numeroTexto);
+        System.out.println(opcion);
 }
 
 }
