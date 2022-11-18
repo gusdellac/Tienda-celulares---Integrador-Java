@@ -1,7 +1,7 @@
 
 package main;
 
-public class SistemaCreacionProductos {
+public abstract class SistemaCreacionProductos {
 
     public static void creacionProductos(){
         

@@ -4,7 +4,7 @@ package main;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class BaseDatosProductos {
+public abstract class BaseDatosProductos {
     
     private static final Map <Integer, Producto> productos = new TreeMap<>();
     private static int idProducto;
@@ -36,17 +36,17 @@ public class BaseDatosProductos {
             System.out.println(productos.get(IDproducto).toString());
             return true;
         }else{
-            System.out.println("\t\t***La opción elegida es inexistente***\n");
+            InterfazUsuario.mostrarOpcionIngresadaIncorrecta();
             return false;
         }
     }
     
     public static void mostrarCaracteristicas(int IDproducto){
         if (buscarProducto(IDproducto)){
-            System.out.println("\n<<<Características>>> \n"
-                +productos.get(IDproducto).getCaracteristicas());
+            InterfazUsuario.mostrarTituloCaracteristicas();
+            System.out.println(productos.get(IDproducto).getCaracteristicas());
         } else{
-            System.out.println("El id ingresado no existe!!");
+            InterfazUsuario.mostrarIdIngresadoIncorrecto();
         }
     }
     

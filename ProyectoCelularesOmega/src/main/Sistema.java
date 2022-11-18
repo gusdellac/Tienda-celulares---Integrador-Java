@@ -4,14 +4,14 @@ package main;
 import java.util.Scanner;
 
 
-public class Sistema {
+public abstract class Sistema {
     
     private static int opcionProducto;
     private static int opcion;
     
     public static void iniciarSistema() {
-        InterfazUsuario.mostrarTituloMenu();
         SistemaCreacionProductos.creacionProductos();
+        InterfazUsuario.mostrarTituloMenu();
         InterfazUsuario.mostrarOpcionesDeMarcas();
         elegirMarca();
     }

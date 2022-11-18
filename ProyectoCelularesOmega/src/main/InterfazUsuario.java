@@ -1,7 +1,7 @@
 
 package main;
 
-public class InterfazUsuario {
+public abstract class InterfazUsuario {
 
     public static void mostrarTituloMenu(){
         System.out.println("\t\t\t   <<<<<<CELULARES OMEGA>>>>>>>\n");
@@ -33,6 +33,10 @@ public class InterfazUsuario {
         pedirDigitarOpcion();
     }
     
+    public static void mostrarTituloCaracteristicas(){
+        System.out.println("\n<<<Características>>> \n");
+    }
+    
     public static void mostrarOpcionComprarVolverMenuPrincipal(){
         System.out.println("\n1. Comprar.");
         System.out.println("2. Volver al ménu principal.");
@@ -43,6 +47,10 @@ public class InterfazUsuario {
         System.out.println("\t\t***La opción elegida es "
                             + "inexistente***\n");
         System.out.println("\t\t***Por favor digite nuevamente***\n");
+    }
+    
+    public static void mostrarIdIngresadoIncorrecto(){
+        System.out.println("\t\t***El id ingresado es inexistente***\n");
     }
     
     public static void mostrarMediosDePago(){
