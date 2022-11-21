@@ -41,6 +41,7 @@ public abstract class BaseDatosProductos {
         }
     }
     
+    
     public static void mostrarCaracteristicas(int IDproducto){
         if (buscarProducto(IDproducto)){
             InterfazUsuario.mostrarTituloCaracteristicas();
@@ -64,5 +65,11 @@ public abstract class BaseDatosProductos {
             }  
         }
     }
+    
+    public static double obtenerPrecioProducto(int idproducto){
+        return productos.get(idproducto).getPrecio();
+    }
+    
+    
   
 }

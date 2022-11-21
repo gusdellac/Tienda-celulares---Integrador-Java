@@ -105,15 +105,36 @@ public abstract class Sistema {
         InterfazUsuario.mostrarMediosDePago();
      
         opcion = Integer.parseInt(input.nextLine());
-        
+        double precio;
+        double precioSeisCuotas;
+        double precioDoceCuotas;
         switch(opcion){
             case 1:
+                precio = MetodoDePago.calcularDescuentoQuincePorciento
+                (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
+                InterfazUsuario.mostrarPrecioConDescuento(precio);
                 break;
             case 2:
+                precio = MetodoDePago.calcularDescuentoQuincePorciento
+                (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
+                InterfazUsuario.mostrarPrecioConDescuento(precio);
                 break;
             case 3:
+                precio = MetodoDePago.calcularDescuentoDiezPorciento
+                (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
+                InterfazUsuario.mostrarPrecioConDescuento(precio);
+                
                 break;
             case 4:
+                //precio 6 cuotas
+                precioSeisCuotas = MetodoDePago.calcularCuotasSeis
+                  ((BaseDatosProductos.obtenerPrecioProducto(opcionProducto)));
+                InterfazUsuario.mostrarPrecioSeisCuotas(precioSeisCuotas);
+                
+                //precio 12 cuotas
+                precioDoceCuotas = MetodoDePago.calcularCuotasDoce
+                  ((BaseDatosProductos.obtenerPrecioProducto(opcionProducto)));
+                InterfazUsuario.mostrarPrecioDoceCuotas(precioDoceCuotas);
                 break;
             default:
                 InterfazUsuario.mostrarOpcionIngresadaIncorrecta();

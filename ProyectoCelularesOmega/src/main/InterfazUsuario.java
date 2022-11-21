@@ -62,5 +62,18 @@ public abstract class InterfazUsuario {
         pedirDigitarOpcion();
     }
     
-  
+    public static void mostrarPrecioConDescuento(double precio){
+        System.out.print("El precio con descuento es: "+ precio);
+    }
+    
+    public static void mostrarPrecioSeisCuotas(double precio){
+        System.out.println("El monto a pagar en 6 cuotas es de: "+precio+
+                " sin interés");
+    }
+    
+    public static void mostrarPrecioDoceCuotas(double precio){
+        System.out.println("El monto a pagar en 12 cuotas es de: "+precio+
+                " sin interés");
+    }
+    
 }
