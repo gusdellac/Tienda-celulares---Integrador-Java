@@ -63,7 +63,7 @@ public abstract class InterfazUsuario {
     }
     
     public static void mostrarPrecioConDescuento(double precio){
-        System.out.print("El precio con descuento es: "+ precio);
+        System.out.println("El precio con descuento es: "+ precio);
     }
     
     public static void mostrarPrecioSeisCuotas(double precio){
