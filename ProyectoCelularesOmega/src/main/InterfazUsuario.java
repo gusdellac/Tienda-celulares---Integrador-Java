@@ -34,7 +34,7 @@ public abstract class InterfazUsuario {
     }
     
     public static void mostrarTituloCaracteristicas(){
-        System.out.println("\n<<<Características>>> \n");
+        System.out.println("\n\t\t\t<<<Características>>> \n");
     }
     
     public static void mostrarOpcionComprarVolverMenuPrincipal(){
@@ -58,22 +58,37 @@ public abstract class InterfazUsuario {
         System.out.println("1. Mercado Pago (15% de descuento)");
         System.out.println("2. Transferencia bancaria  (15% de descuento)");
         System.out.println("3. Tarjeta débito (10% de descuento)");
-        System.out.println("4. Tarjeta crédito 6/12 cuotas sin interes");
+        System.out.println("4. Tarjeta crédito 6/12 cuotas sin interés");
         pedirDigitarOpcion();
     }
     
     public static void mostrarPrecioConDescuento(double precio){
-        System.out.println("El precio con descuento es: "+ precio);
+        System.out.println("El precio final es: $ "+ precio);
     }
     
     public static void mostrarPrecioSeisCuotas(double precio){
-        System.out.println("El monto a pagar en 6 cuotas es de: "+precio+
+        System.out.println("El monto a pagar en 6 cuotas es de: $ "+precio+
                 " sin interés");
     }
     
     public static void mostrarPrecioDoceCuotas(double precio){
-        System.out.println("El monto a pagar en 12 cuotas es de: "+precio+
+        System.out.println("El monto a pagar en 12 cuotas es de: $ "+precio+
                 " sin interés");
+    }
+    
+    public static void mostrarOpcionCompraMenuPrincipalSalir(){
+        System.out.println("1. Finalizar compra.");
+        System.out.println("2. Volver al menú principal.");
+        System.out.println("3. Salir.");
+    }
+    
+    public static void mostrarCompraFinalizada(){
+        System.out.println("***Su compra ha sido realizada con éxito, muchas"
+                + " gracias!!***");
+    }
+    
+    public static void mostrarMensajeDespedidaUsuario(){
+        System.out.println("***Muchas gracias por utilizar nuestro sistema***");
     }
     
 }
