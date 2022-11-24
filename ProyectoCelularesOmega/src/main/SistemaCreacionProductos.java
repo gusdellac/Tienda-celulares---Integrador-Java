@@ -2,8 +2,13 @@
 package main;
 
 public abstract class SistemaCreacionProductos {
-
+    
+    //método estático void para la creación de productos en el Map de la clase
+    //BaseDatosProductos
     public static void creacionProductos(){
+        
+        //llamada al método ingresarProductosLista() pasando los parámetros
+        //correspondientes
         
         //SAMSUNG
         BaseDatosProductos.ingresarProductosLista("Samsung", "A12 128GB/4GB", 

@@ -1,7 +1,7 @@
 
 package test;
 
-import main.Producto;
+//import main.Producto;
 
 public class TestProducto {
     public static void main(String[] args) {
