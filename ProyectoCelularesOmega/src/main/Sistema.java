@@ -6,14 +6,22 @@ import java.util.Scanner;
 
 public abstract class Sistema {
     
+    //variable estática de tipo int para almacenar un número ingresado por
+    //el usuario. Está variable será utilizada para identificar un producto
+    //por su clave en el Map de clase BaseDatosProductos
     private static int opcionProducto;
+    
+    //variable estática de tipo int para almacenar distintas opciones en
+    //diferentes métodos y ser reutilizada
     private static int opcion;
     
+    //método estático void para iniciar sistema
     public static void iniciarSistema() {
         SistemaCreacionProductos.creacionProductos();
         elegirMarca();
     }
     
+    //método estático void para operar con una marca en específco
     public static void elegirMarca(){
         InterfazUsuario.mostrarTituloMenu();
         InterfazUsuario.mostrarOpcionesDeMarcas();
@@ -60,6 +68,7 @@ public abstract class Sistema {
         
     }
     
+    //método estático void para elegir un producto
     public static void elegirProducto(){
         boolean productoExistente;
         Scanner input = new Scanner(System.in);
@@ -74,6 +83,8 @@ public abstract class Sistema {
         }      
     }
     
+    //método estático void para elegir entre ver las características de un 
+    //producto o comprarlo
     public static void elegirOpcionCaracteristicasComprar(){
         Scanner input = new Scanner(System.in);
         InterfazUsuario.mostrarOpcionCaracteristicasComprar();
@@ -108,6 +119,7 @@ public abstract class Sistema {
         }
     }
     
+    //método estático void para elegir el método de pago que se desea utilizar
     public static void elegirOpcionesCompra(){
         Scanner input = new Scanner(System.in);
         InterfazUsuario.mostrarSeparacionInterfaz();
@@ -155,6 +167,8 @@ public abstract class Sistema {
         }
     }
     
+    //método estático void para elegir entre opción Comprar, ir al menú 
+    //principal, o salir del sistema
     public static void elegirOpcionCompraMenuPrincipalSalir(){
         InterfazUsuario.mostrarSeparacionInterfaz();
         InterfazUsuario.mostrarOpcionCompraMenuPrincipalSalir();
