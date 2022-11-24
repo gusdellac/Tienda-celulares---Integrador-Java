@@ -11,30 +11,39 @@ public abstract class Sistema {
     
     public static void iniciarSistema() {
         SistemaCreacionProductos.creacionProductos();
-        InterfazUsuario.mostrarTituloMenu();
-        InterfazUsuario.mostrarOpcionesDeMarcas();
         elegirMarca();
     }
     
     public static void elegirMarca(){
+        InterfazUsuario.mostrarTituloMenu();
+        InterfazUsuario.mostrarOpcionesDeMarcas();
+        
         InterfazUsuario.pedirDigitarOpcion();
         Scanner input = new Scanner(System.in);
         opcion = Integer.parseInt(input.nextLine());
         switch(opcion){
             case 1:
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 BaseDatosProductos.mostrarProductoPorMarca("Samsung");
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 elegirProducto(); 
                 break;
             case 2:
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 BaseDatosProductos.mostrarProductoPorMarca("Motorola");
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 elegirProducto(); 
                 break;
             case 3:
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 BaseDatosProductos.mostrarProductoPorMarca("Apple");
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 elegirProducto(); 
                 break;
             case 4:
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 BaseDatosProductos.mostrarProductoPorMarca("Xiaomi");
+                InterfazUsuario.mostrarSeparacionInterfaz();
                 elegirProducto(); 
                 break;
             case 5:
@@ -58,14 +67,14 @@ public abstract class Sistema {
         opcionProducto = Integer.parseInt(input.nextLine());
         productoExistente = BaseDatosProductos.mostrarProducto(opcionProducto);
         if(productoExistente){
-            elegirOpciones();
+            elegirOpcionCaracteristicasComprar();
         }else{
             BaseDatosProductos.mostrarListaProductos();
             elegirProducto();
         }      
     }
     
-    public static void elegirOpciones(){
+    public static void elegirOpcionCaracteristicasComprar(){
         Scanner input = new Scanner(System.in);
         InterfazUsuario.mostrarOpcionCaracteristicasComprar();
         opcion = Integer.parseInt(input.nextLine());
@@ -86,7 +95,7 @@ public abstract class Sistema {
                         break;
                     default:
                         InterfazUsuario.mostrarOpcionIngresadaIncorrecta();
-                        elegirOpciones();
+                        elegirOpcionCaracteristicasComprar();
                         break;
                 }   break;
             case 2:
@@ -94,7 +103,7 @@ public abstract class Sistema {
                 break;
             default:
                 InterfazUsuario.mostrarOpcionIngresadaIncorrecta();
-                elegirOpciones();
+                elegirOpcionCaracteristicasComprar();
                 break;
         }
     }
@@ -113,17 +122,19 @@ public abstract class Sistema {
                 precio = MetodoDePago.calcularDescuentoQuincePorciento
                 (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
                 InterfazUsuario.mostrarPrecioConDescuento(precio);
+                elegirOpcionCompraMenuPrincipalSalir();
                 break;
             case 2:
                 precio = MetodoDePago.calcularDescuentoQuincePorciento
                 (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
                 InterfazUsuario.mostrarPrecioConDescuento(precio);
+                elegirOpcionCompraMenuPrincipalSalir();
                 break;
             case 3:
                 precio = MetodoDePago.calcularDescuentoDiezPorciento
                 (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
                 InterfazUsuario.mostrarPrecioConDescuento(precio);
-                
+                elegirOpcionCompraMenuPrincipalSalir();
                 break;
             case 4:
                 //precio 6 cuotas
@@ -135,10 +146,30 @@ public abstract class Sistema {
                 precioDoceCuotas = MetodoDePago.calcularCuotasDoce
                   ((BaseDatosProductos.obtenerPrecioProducto(opcionProducto)));
                 InterfazUsuario.mostrarPrecioDoceCuotas(precioDoceCuotas);
+                
+                elegirOpcionCompraMenuPrincipalSalir();
                 break;
             default:
                 InterfazUsuario.mostrarOpcionIngresadaIncorrecta();
                 elegirOpcionesCompra();
+        }
+    }
+    
+    public static void elegirOpcionCompraMenuPrincipalSalir(){
+        InterfazUsuario.mostrarSeparacionInterfaz();
+        InterfazUsuario.mostrarOpcionCompraMenuPrincipalSalir();
+        InterfazUsuario.pedirDigitarOpcion();
+        Scanner input = new Scanner(System.in);
+        opcion = Integer.parseInt(input.nextLine());
+        switch(opcion){
+            case 1:
+                InterfazUsuario.mostrarCompraFinalizada();
+                break;
+            case 2:
+                elegirMarca();
+                break;
+            default:
+                InterfazUsuario.mostrarMensajeDespedidaUsuario();  
         }
     }
 }
