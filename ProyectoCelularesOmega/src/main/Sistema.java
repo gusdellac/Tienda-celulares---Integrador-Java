@@ -23,6 +23,7 @@ public abstract class Sistema {
     
     //método estático void para operar con una marca en específco
     public static void elegirMarca(){
+        InterfazUsuario.mostrarSeparacionInterfaz();
         InterfazUsuario.mostrarTituloMenu();
         InterfazUsuario.mostrarOpcionesDeMarcas();
         
