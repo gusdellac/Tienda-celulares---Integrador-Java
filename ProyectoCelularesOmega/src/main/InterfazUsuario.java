@@ -55,25 +55,24 @@ public abstract class InterfazUsuario {
     
     public static void mostrarMediosDePago(){
         System.out.println("\t\t\t<<<<<<METODOS DE PAGO>>>>>>>\n");
-        System.out.println("1. Mercado Pago (15% de descuento)");
+        System.out.println("1. Mercado Pago");
         System.out.println("2. Transferencia bancaria  (15% de descuento)");
         System.out.println("3. Tarjeta débito (10% de descuento)");
-        System.out.println("4. Tarjeta crédito 6/12 cuotas sin interés");
+        System.out.println("4. Tarjeta crédito 6 cuotas (22% recargo)");
+        System.out.println("5. Tarjeta crédito 12 cuotas (33% recargo)");
         pedirDigitarOpcion();
     }
     
-    public static void mostrarPrecioConDescuento(double precio){
+    public static void mostrarPrecio(double precio){
         System.out.println("El precio final es: $ "+ precio);
     }
     
     public static void mostrarPrecioSeisCuotas(double precio){
-        System.out.println("El monto a pagar en 6 cuotas es de: $ "+precio+
-                " sin interés");
+        System.out.println("El monto a pagar es de 6 cuotas de: $ "+precio);
     }
     
     public static void mostrarPrecioDoceCuotas(double precio){
-        System.out.println("El monto a pagar en 12 cuotas es de: $ "+precio+
-                " sin interés");
+        System.out.println("El monto a pagar es de 12 cuotas de: $ "+precio);
     }
     
     public static void mostrarOpcionCompraMenuPrincipalSalir(){
@@ -83,12 +82,12 @@ public abstract class InterfazUsuario {
     }
     
     public static void mostrarCompraFinalizada(){
-        System.out.println("***Su compra ha sido realizada con éxito, muchas"
+        System.out.println("\n***Su compra ha sido realizada con éxito, muchas"
                 + " gracias!!***");
     }
     
     public static void mostrarMensajeDespedidaUsuario(){
-        System.out.println("***Muchas gracias por utilizar nuestro sistema***");
+        System.out.println("\n***Muchas gracias por utilizar nuestro sistema***");
     }
     
 }

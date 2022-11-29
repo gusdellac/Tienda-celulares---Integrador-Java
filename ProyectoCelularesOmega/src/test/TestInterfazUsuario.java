@@ -14,8 +14,11 @@ public class TestInterfazUsuario {
         InterfazUsuario.mostrarOpcionIngresadaIncorrecta();
         InterfazUsuario.mostrarIdIngresadoIncorrecto();
         InterfazUsuario.mostrarMediosDePago();
-        InterfazUsuario.mostrarPrecioConDescuento(2500);
+        InterfazUsuario.mostrarPrecio(2500);
         InterfazUsuario.mostrarPrecioSeisCuotas(2500);
         InterfazUsuario.mostrarPrecioDoceCuotas(2500);
+        InterfazUsuario.mostrarOpcionCompraMenuPrincipalSalir();
+        InterfazUsuario.mostrarCompraFinalizada();
+        InterfazUsuario.mostrarMensajeDespedidaUsuario();
     }
 }

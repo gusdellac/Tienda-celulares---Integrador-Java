@@ -62,8 +62,6 @@ public abstract class Sistema {
                 break;
             default:
                 InterfazUsuario.mostrarOpcionIngresadaIncorrecta();
-                InterfazUsuario.mostrarTituloMenu();
-                InterfazUsuario.mostrarOpcionesDeMarcas();
                 elegirMarca();
         }
         
@@ -132,21 +130,21 @@ public abstract class Sistema {
         double precioDoceCuotas;
         switch(opcion){
             case 1:
-                precio = MetodoDePago.calcularDescuentoQuincePorciento
-                (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
-                InterfazUsuario.mostrarPrecioConDescuento(precio);
+                precio = BaseDatosProductos.
+                        obtenerPrecioProducto(opcionProducto);
+                InterfazUsuario.mostrarPrecio(precio);
                 elegirOpcionCompraMenuPrincipalSalir();
                 break;
             case 2:
                 precio = MetodoDePago.calcularDescuentoQuincePorciento
                 (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
-                InterfazUsuario.mostrarPrecioConDescuento(precio);
+                InterfazUsuario.mostrarPrecio(precio);
                 elegirOpcionCompraMenuPrincipalSalir();
                 break;
             case 3:
                 precio = MetodoDePago.calcularDescuentoDiezPorciento
                 (BaseDatosProductos.obtenerPrecioProducto(opcionProducto));
-                InterfazUsuario.mostrarPrecioConDescuento(precio);
+                InterfazUsuario.mostrarPrecio(precio);
                 elegirOpcionCompraMenuPrincipalSalir();
                 break;
             case 4:
@@ -154,12 +152,13 @@ public abstract class Sistema {
                 precioSeisCuotas = MetodoDePago.calcularCuotasSeis
                   ((BaseDatosProductos.obtenerPrecioProducto(opcionProducto)));
                 InterfazUsuario.mostrarPrecioSeisCuotas(precioSeisCuotas);
-                
+                elegirOpcionCompraMenuPrincipalSalir();
+                break;
+            case 5:
                 //precio 12 cuotas
                 precioDoceCuotas = MetodoDePago.calcularCuotasDoce
                   ((BaseDatosProductos.obtenerPrecioProducto(opcionProducto)));
                 InterfazUsuario.mostrarPrecioDoceCuotas(precioDoceCuotas);
-                
                 elegirOpcionCompraMenuPrincipalSalir();
                 break;
             default:
