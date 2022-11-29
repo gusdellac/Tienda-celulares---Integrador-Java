@@ -18,13 +18,13 @@ public abstract class MetodoDePago {
     
     //método estático para calcular 6 cuotas
     public static double calcularCuotasSeis(double precio){
-        double precioResultado = precio / 6;
+        double precioResultado = (precio + precio*0.22) / 6;
         return precioResultado;
     }
     
     //método estático para calcular 12 cuotas
     public static double calcularCuotasDoce(double precio){
-        double precioResultado = precio / 12;
+        double precioResultado = (precio + precio*0.33) / 12;
         return precioResultado;
     }
     
